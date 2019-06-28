@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="newRelatorio" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="52c11525-3bee-4c56-aecb-d7f8e8bc27ea">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#C3CFD9">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#C3CFD9">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F8FCFF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1" uuid="28574426-4c61-4146-8593-77b939cf035a"/>
+	<subDataset name="newBase" uuid="655509ea-2af8-41e9-befd-3c28207eb4a7">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     *,
+     colaborador.`CRACHA` AS colaborador_CRACHA,
+     colaborador.`NOME` AS colaborador_NOME,
+     colaborador.`SETOR` AS colaborador_SETOR,
+     colaborador.`FUNCAO` AS colaborador_FUNCAO,
+     colaborador.`DATACAD` AS colaborador_DATACAD,
+     colaborador.`SEXO` AS colaborador_SEXO,
+     colaborador.`TELEFONE` AS colaborador_TELEFONE,
+     colaborador.`ARMARIO` AS colaborador_ARMARIO
+FROM
+     `colaborador` colaborador
+WHERE
+     colaborador.`ARMARIO` <> 0]]>
+		</queryString>
+		<field name="CRACHA" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="NOME" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="SETOR" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="FUNCAO" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="ARMARIO" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="DATACAD" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="SEXO" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="TELEFONE" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="colaborador_CRACHA" class="java.lang.Integer"/>
+		<field name="colaborador_NOME" class="java.lang.String"/>
+		<field name="colaborador_SETOR" class="java.lang.String"/>
+		<field name="colaborador_FUNCAO" class="java.lang.String"/>
+		<field name="colaborador_DATACAD" class="java.sql.Date"/>
+		<field name="colaborador_SEXO" class="java.lang.String"/>
+		<field name="colaborador_TELEFONE" class="java.lang.String"/>
+		<field name="colaborador_ARMARIO" class="java.lang.Integer"/>
+		<group name="CRACHA">
+			<groupExpression><![CDATA[$F{CRACHA}]]></groupExpression>
+		</group>
+		<group name="NOME">
+			<groupExpression><![CDATA[$F{NOME}]]></groupExpression>
+		</group>
+		<group name="SETOR">
+			<groupExpression><![CDATA[$F{SETOR}]]></groupExpression>
+		</group>
+		<group name="ARMARIO">
+			<groupExpression><![CDATA[$F{ARMARIO}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="dataset2" uuid="f78d6502-d296-4d9b-a44f-4f0515e9d2bc"/>
+	<queryString>
+		<![CDATA[SELECT * FROM COLABORADOR]]>
+	</queryString>
+	<field name="CRACHA" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SETOR" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FUNCAO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ARMARIO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATACAD" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEXO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TELEFONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="532" y="27" width="100" height="20" uuid="9d7ae0e5-7ed2-485f-9291-85e1e640a7a3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="50" width="555" height="1" uuid="da229f43-fe23-4833-bf1b-e4b84dcbd327"/>
+			</line>
+			<elementGroup/>
+			<image>
+				<reportElement x="0" y="-22" width="218" height="69" uuid="84e5d82b-342c-408f-b5ea-e1db20aeaadc"/>
+				<imageExpression><![CDATA["C:\\Users\\Administrador\\Pictures\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="505" y="27" width="100" height="20" uuid="bc04786f-1a77-4ef1-9e87-312e05ad677b"/>
+				<text><![CDATA[Pag.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="12" width="274" height="20" uuid="4d0210b9-d59f-4c33-877e-e074c0521a31"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTROLE DE ARMARIO - RELATÓRIO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="4" width="207" height="27" uuid="bc7c446b-925f-4652-bc9b-16654078819e">
+					<property name="net.sf.jasperreports.export.pdf.tag.h1" value="start"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLABORADORES POR ARMÁRIO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="543" splitType="Stretch">
+			<elementGroup>
+				<componentElement>
+					<reportElement key="table 1" style="table 1" x="-7" y="0" width="568" height="543" uuid="1c55f7d7-0932-4340-b7d8-cbb32d344f81"/>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="newBase" uuid="16e0b2cc-5a1f-4fb3-8433-2ebfdd46c8ce">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+						<jr:column width="55" uuid="d53d9395-a1dd-47e4-99c3-acf0db354b17">
+							<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="10" y="0" width="45" height="30" uuid="fc81bb93-7f74-4fd1-9f98-7b1c71889255"/>
+									<textElement textAlignment="Justified"/>
+									<text><![CDATA[CRACHA:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+							<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="10" y="0" width="45" height="20" uuid="ac4ebd13-4b58-49d1-8307-852adfcc9564"/>
+									<textFieldExpression><![CDATA[$F{CRACHA}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="153" uuid="240f185c-1113-4bbe-874f-8ae80529c911">
+							<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="11" y="0" width="121" height="30" uuid="57a2ab9a-deaa-4b22-9a9b-325230901903"/>
+									<text><![CDATA[NOME:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+							<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="11" y="0" width="142" height="20" uuid="0f00ea19-c4f5-4d32-b807-dd2753974966"/>
+									<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="98" uuid="af8d5ae5-d786-4191-92d9-cd8d3ace7253">
+							<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="11" y="0" width="87" height="30" uuid="8d7f1ee7-f2fb-4af9-bf18-01cd771ea152"/>
+									<text><![CDATA[SETOR:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+							<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="11" y="0" width="87" height="20" uuid="3bdcf77d-2a06-457c-bf26-6bf309d122f9"/>
+									<textFieldExpression><![CDATA[$F{SETOR}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="129" uuid="78de15e7-eb5a-48f3-ac22-30ce0e4bc98c">
+							<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="11" y="0" width="118" height="30" uuid="8670bd4c-fa18-4d0a-b6d3-f70eece8828a"/>
+									<text><![CDATA[FUNÇÃO:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+							<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="11" y="0" width="118" height="20" uuid="5d8e0b6e-cff1-458a-a927-4bfb988a55fc"/>
+									<textFieldExpression><![CDATA[$F{FUNCAO}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="858512be-7bf6-4159-bc95-178b0bdbfe45">
+							<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="10" y="0" width="51" height="30" uuid="7f1a544c-6d84-4484-9a2c-974a02642333"/>
+									<text><![CDATA[ARMÁRIO:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+							<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="10" y="0" width="51" height="20" uuid="5ad35e31-a63e-4e05-a92c-5d1c97982362"/>
+									<textFieldExpression><![CDATA[$F{ARMARIO}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="89d2accb-f6aa-46cb-bd1d-a0684d8873fd">
+							<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="10" y="0" width="70" height="30" uuid="72152f0b-3e35-426a-99d6-30ab5c622e2e"/>
+									<text><![CDATA[CADASTRO:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+							<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="10" y="0" width="70" height="20" uuid="643051ab-c0d3-48c1-a047-50248f47fd13"/>
+									<textFieldExpression><![CDATA[$F{DATACAD}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</elementGroup>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="485" y="34" width="100" height="20" uuid="c1c5721d-0612-4346-abea-7245da1d536e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="33" width="555" height="1" uuid="fb4952ce-fb93-4553-86cd-994a576d5581"/>
+			</line>
+			<staticText>
+				<reportElement x="405" y="33" width="100" height="20" uuid="78dd9336-c535-458d-90b1-c83994ece7a3"/>
+				<text><![CDATA[Data Relatório:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
